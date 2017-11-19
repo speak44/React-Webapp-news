@@ -6,7 +6,7 @@ class Header extends Component{
 		return(
 			<div className="header">
 				<div className="left_box">
-					<a href="https://m.baidu.com"></a>
+					<a href={'javascript:;'}></a>
 					<Link to='profile'></Link>
 				</div>
 				<div className="right_box">

@@ -1,12 +1,8 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import './style/SearchPage.css';
-// import fetch from 'react-fetch';
-// var fetch = require('fetch');
-// import fetch from 'fetch'
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
-console.log(fetch)
+import $ from "jquery";
+
 class SearchPage extends Component{
 
 	constructor(){
@@ -18,14 +14,64 @@ class SearchPage extends Component{
 	}
 	//搜索新闻
 	searchNews = () => {
-    fetch('http://api.jisuapi.com/news/search?keyword=姚明&appkey=719df17f4e283de9').then(function (response) {
-      return response.json();
-    }).then(function (jsonData) {
-      console.log(jsonData);
-    }).catch(function () {
-      console.log('出错了');
-    });
-  }
+		const that = this;
+		if(that.search.value){
+			$.ajax({
+				url:'http://api.jisuapi.com/news/search?appkey=719df17f4e283de9',
+				dataType:'jsonp',
+				data:{
+					 keyword:this.search.value
+				},
+				success:function(data){
+					let html = '';
+					console.log(data);
+					that.setState({
+						loadingHide:true
+					});
+					data.result.list.forEach(function(e){
+						if(e.pic){
+							html += `
+								<div class="list">
+									<a href="${e.url}">
+										<img  src="${e.pic}"/>
+										<div class="top">
+											<span>
+												${e.title.substr(0,23)}
+											</span>
+										</div>
+										<div class="bottom">
+											${e.time}
+											<span class="src">
+												${e.src.substr(0,4)+'..'}
+											</span>
+										</div>
+									</a>
+								</div>
+							`;
+							}else{
+							html +=`
+								<div class="list2">
+									<a href="${e.url}">
+										<div class="top2">
+											<span>
+												${e.title.substr(0,26)}
+											</span>
+										</div>
+										<div class="bottom2">
+											${e.time}
+											<span class="src">${e.src}</span>
+										</div>
+									</a>
+								</div>
+							`;
+							}
+					});
+					that.newsBox.innerHTML = html;
+					that.newsLength.innerHTML = `找到相关新闻${data.result.num}条`;
+				}
+			});
+		}
+	}
 
 
 	componentDidMount(){
@@ -35,26 +81,25 @@ class SearchPage extends Component{
 	}
 
 	goTop = () => {
-		//ReactDom.findDOMNode(this).scrollIntoView();
-		//ReactDom.findDOMNode(this).scrollTop = 0;
+		//返回顶部
 		this.view.scrollIntoView();
 	}
 
 	render(){
-
 		return(
 			<div
 				className={this.state.viewShow?'viewshow':'view'}
 				ref={(el)=>{this.view=el}}
 			>
 				<div className="searchHeader">
+					{/* 跳回首页 */}
 					<Link to="/"></Link>
 					<span>搜新闻</span>
 				</div>
 				<div className="searchBox_Box">
 					<div className="searchBox">
 						<input type="search" ref={(el)=>{this.search=el}} />
-						<span onClick={this.searchNews} >百度一下</span>
+						<span onClick={this.searchNews} >普华搜索</span>
 					</div>
 				</div>
 				<div

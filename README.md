@@ -1,2 +1,2 @@
 # React-Webapp-news
-移动端的新闻展示页面
+移动端的普华新闻webapp
