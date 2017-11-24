@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import logo from './logo.svg';
 import Header from './components/Header/Header';
+import Nav from './components/Nav/Nav';
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <div>
         <Header/>
+				<Nav />
       </div>
     );
   }

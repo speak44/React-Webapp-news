@@ -59,7 +59,7 @@ class SearchPage extends Component{
 										</div>
 										<div class="bottom2">
 											${e.time}
-											<span class="src">${e.src}</span>
+											<span class="src">${e.src.substr(0,4)+'..'}</span>
 										</div>
 									</a>
 								</div>
@@ -124,7 +124,6 @@ class SearchPage extends Component{
 					ref={(el)=>{this.goTopEle=el}}
 				>
 				</div>
-
 			</div>
 		);
 	}

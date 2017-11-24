@@ -1,0 +1,157 @@
+.NavCont {
+  background-color: #c81623;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+  top: 1.825rem;
+}
+.scrollMenu {
+  overflow: hidden;
+  position: relative;
+  background: url(https://gss0.bdstatic.com/5foIcy0a2gI2n2jgoY3K/n/nvn/static/news/imgs/webbg_46aa018.png) bottom left repeat-x;
+  background-size: 0.25rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 1.425rem;
+}
+.lgrad {
+  position: absolute;
+  left: 0.399rem;
+  top: 0;
+  width: 0.625rem;
+  height: 1.2rem !important;
+  background-image: linear-gradient(to right, #c81623 0, rgba(62, 152, 240, 0) 100%);
+  z-index: 1;
+}
+.menuske {
+  overflow: hidden;
+  overflow-x: auto;
+  display: -webkit-box;
+  padding-bottom: 0.75rem;
+  padding-top: .58rem;
+  transform: translateY(0.75rem);
+  margin: -1.2rem 1.125rem 0 0.425rem;
+  list-style: none;
+}
+.menuske li:first-child {
+  margin-left: 0;
+}
+.menuske li {
+  margin: 0 0.4rem;
+  height: 1rem;
+}
+.menuske li a {
+  display: block;
+  font-size: 0.55rem;
+  line-height: 1.025rem;
+  padding: 0 0.1rem;
+  color: #fff;
+}
+.rgrad {
+  height: 1.2rem !important;
+  left: auto;
+  right: 1.125rem;
+  background-image: linear-gradient(to left, #c81623 0, rgba(62, 152, 240, 0) 100%);
+  position: absolute;
+  top: 0;
+  width: 0.625rem;
+  z-index: 1;
+}
+.more {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  display: block;
+  padding: 0.3rem 0.425rem 0.3rem 0.3rem;
+}
+.NavCont .i {
+  width: 0.625rem;
+  height: 0.625rem;
+  display: block;
+  background: url(../Img/i2.png) no-repeat center;
+  background-size: 0.625rem;
+}
+.allMenu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  visibility: visible!important;
+  display: none;
+}
+.allMenu .menusArea {
+  height: calc(98.775%);
+  background: #c81623;
+}
+.allMenu .title {
+  border-bottom: 0.025rem solid #ffffff;
+  height: 1rem;
+  line-height: 1.025rem;
+  color: #fff;
+  padding: 0 0.575rem;
+  background-size: 0.25rem;
+  position: relative;
+  font-size: 0.55rem;
+}
+.title .less {
+  background-repeat: no-repeat;
+  position: absolute;
+  left: auto;
+  bottom: 0;
+  top: 0;
+  height: 0.4rem;
+  width: 0.4rem;
+  right: 0;
+  padding: 0.3rem 0.425rem 0.3rem 0.3rem;
+  display: block;
+}
+.allMenu .menusbg {
+  padding: 0 0.175rem;
+}
+.allMenu .mark {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.menusbg .menus li {
+  width: 16.6667%;
+  float: left;
+}
+.menusbg .menus a {
+  line-height: 1rem;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.55rem;
+  display: block;
+  padding: 0 0.1rem;
+  color: #fff!important;
+  height: 0.95rem !important;
+}
+.btmMenu {
+  display: -webkit-box;
+}
+.btmMenu li {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+.btmMenu li a {
+  height: 1rem;
+  font-size: 0.55rem;
+  line-height: 1.025rem;
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+.allMenu .mask {
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

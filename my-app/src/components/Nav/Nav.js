@@ -1,6 +1,7 @@
-import react,{Component} from 'react';
-
-clss Nav extends Component(){
+import React,{Component} from 'react';
+import './style/Nav.css';
+import '../../components/common.css';
+class Nav extends Component{
   constructor(){
 		super();
     this.state={
@@ -21,12 +22,59 @@ clss Nav extends Component(){
 				{title:"育儿",checked:false,show:false}
 			]
 		}
-    render(){
-      return(
-        <div className="">
-
+  }
+  render(){
+    return(
+      <div className="NavCont">
+        <div className="scrollMenu">
+          <p className="lgrad"></p>
+          <ul className="menuske">
+            <li><a href={'javascript:;'}>推荐</a></li>
+            <li><a href={'javascript:;'}>新闻</a></li>
+            <li><a href={'javascript:;'}>财经</a></li>
+            <li><a href={'javascript:;'}>体育</a></li>
+            <li><a href={'javascript:;'}>娱乐</a></li>
+            <li><a href={'javascript:;'}>教育</a></li>
+            <li><a href={'javascript:;'}>军事</a></li>
+            <li><a href={'javascript:;'}>科技</a></li>
+            <li><a href={'javascript:;'}>NBA</a></li>
+          </ul>
+          <p className="rgrad"></p>
+          <p className="more">
+            <i className="i"></i>
+          </p>
         </div>
-      )
-    }
+        <div className="allMenu">
+          <div className="mask"></div>
+          <div className="menusArea">
+            <div className="title">
+              切换栏目
+              <a href={'javascript:;'} className="less">
+                <i className="i"></i>
+              </a>
+            </div>
+            <div className="menusbg">
+              <ul className="menus clearfixqxk">
+                <li><a href={'javascript:;'}>推荐</a></li>
+                <li><a href={'javascript:;'}>新闻</a></li>
+                <li><a href={'javascript:;'}>财经</a></li>
+                <li><a href={'javascript:;'}>体育</a></li>
+                <li><a href={'javascript:;'}>娱乐</a></li>
+                <li><a href={'javascript:;'}>教育</a></li>
+                <li><a href={'javascript:;'}>军事</a></li>
+                <li><a href={'javascript:;'}>科技</a></li>
+                <li><a href={'javascript:;'}>NBA</a></li>
+              </ul>
+            </div>
+            <ul className="btmMenu">
+              <li>
+                <a href={'javascript:;'}>管理我的订阅</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    )
   }
 }
+export default Nav
